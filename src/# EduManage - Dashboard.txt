@@ -1,0 +1,54 @@
+# EduManage - Dashboard
+
+
+## EduManage
+Admin Portal
+[dashboard
+                Dashboard](https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2UyYWU0YTM0YmE4MTQzYTNhNWQxZmEyYTQ4ZjlmMTQyEgsSBxCs0ufhrgcYAZIBIwoKcHJvamVjdF9pZBIVQhM2NjI2MzA2OTU1NTMwNjAyOTcz&filename=&opi=89354086)
+[badge
+                Guru](https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2UyYWU0YTM0YmE4MTQzYTNhNWQxZmEyYTQ4ZjlmMTQyEgsSBxCs0ufhrgcYAZIBIwoKcHJvamVjdF9pZBIVQhM2NjI2MzA2OTU1NTMwNjAyOTcz&filename=&opi=89354086)
+[group
+                Siswa](https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2UyYWU0YTM0YmE4MTQzYTNhNWQxZmEyYTQ4ZjlmMTQyEgsSBxCs0ufhrgcYAZIBIwoKcHJvamVjdF9pZBIVQhM2NjI2MzA2OTU1NTMwNjAyOTcz&filename=&opi=89354086)
+[door_front
+                Kelas](https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2UyYWU0YTM0YmE4MTQzYTNhNWQxZmEyYTQ4ZjlmMTQyEgsSBxCs0ufhrgcYAZIBIwoKcHJvamVjdF9pZBIVQhM2NjI2MzA2OTU1NTMwNjAyOTcz&filename=&opi=89354086)
+[auto_stories
+                Mapel](https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2UyYWU0YTM0YmE4MTQzYTNhNWQxZmEyYTQ4ZjlmMTQyEgsSBxCs0ufhrgcYAZIBIwoKcHJvamVjdF9pZBIVQhM2NjI2MzA2OTU1NTMwNjAyOTcz&filename=&opi=89354086)
+[calendar_today
+                Absensi](https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2UyYWU0YTM0YmE4MTQzYTNhNWQxZmEyYTQ4ZjlmMTQyEgsSBxCs0ufhrgcYAZIBIwoKcHJvamVjdF9pZBIVQhM2NjI2MzA2OTU1NTMwNjAyOTcz&filename=&opi=89354086)
+[import_contacts
+                Jurnal](https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2UyYWU0YTM0YmE4MTQzYTNhNWQxZmEyYTQ4ZjlmMTQyEgsSBxCs0ufhrgcYAZIBIwoKcHJvamVjdF9pZBIVQhM2NjI2MzA2OTU1NTMwNjAyOTcz&filename=&opi=89354086)
+[summarize
+                Laporan](https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2UyYWU0YTM0YmE4MTQzYTNhNWQxZmEyYTQ4ZjlmMTQyEgsSBxCs0ufhrgcYAZIBIwoKcHJvamVjdF9pZBIVQhM2NjI2MzA2OTU1NTMwNjAyOTcz&filename=&opi=89354086)
+[payments
+                Gaji](https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2UyYWU0YTM0YmE4MTQzYTNhNWQxZmEyYTQ4ZjlmMTQyEgsSBxCs0ufhrgcYAZIBIwoKcHJvamVjdF9pZBIVQhM2NjI2MzA2OTU1NTMwNjAyOTcz&filename=&opi=89354086)
+[settings
+                Pengaturan](https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2UyYWU0YTM0YmE4MTQzYTNhNWQxZmEyYTQ4ZjlmMTQyEgsSBxCs0ufhrgcYAZIBIwoKcHJvamVjdF9pZBIVQhM2NjI2MzA2OTU1NTMwNjAyOTcz&filename=&opi=89354086)
+
+# Welcome back, Admin
+Here is the latest summary of your institution.
+Total Students
+
+### 1,248
+Total Teachers
+
+### 86
+Total Classes
+
+### 42
+
+### Attendance Overview
+Weekly student and teacher attendance rates.
+
+### Recent Activity
+New Teacher Registered
+Sarah Jenkins joined the Science department.
+10 mins ago
+Schedule Updated
+Class 10-A Math schedule moved to 10:00 AM.
+1 hour ago
+Low Attendance Alert
+Class 8-B reported 75% attendance today.
+3 hours ago
+Payroll Processed
+Monthly payroll completed successfully.
+Yesterday

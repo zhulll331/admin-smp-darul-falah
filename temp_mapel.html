@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Subject Management - EduManage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#006d44",
+                        "background": "#f8f9fb",
+                        "surface-container-low": "#f3f4f6",
+                        "surface-tint": "#006d44",
+                        "outline-variant": "#bbcabe",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "surface-container-highest": "#e1e2e4",
+                        "outline": "#6c7b70",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed": "#221b00",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#002111",
+                        "surface": "#f8f9fb",
+                        "secondary": "#705d00",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f3",
+                        "surface-dim": "#d9dadc",
+                        "secondary-fixed-dim": "#e9c400",
+                        "secondary-container": "#fdd400",
+                        "tertiary-fixed-dim": "#30d8fa",
+                        "primary-fixed-dim": "#46e099",
+                        "tertiary": "#00687a",
+                        "on-tertiary-fixed": "#001f26",
+                        "on-surface": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#00c7e8",
+                        "surface-bright": "#f8f9fb",
+                        "primary-container": "#2dce89",
+                        "primary-fixed": "#68fdb3",
+                        "on-secondary-fixed-variant": "#544600",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#acecff",
+                        "on-primary-fixed-variant": "#005232",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2e3132",
+                        "surface-container": "#edeef0",
+                        "surface-container-high": "#e7e8ea",
+                        "on-primary-container": "#005232",
+                        "on-secondary-container": "#6f5c00",
+                        "on-tertiary-container": "#004f5d",
+                        "inverse-primary": "#46e099",
+                        "surface-variant": "#e1e2e4",
+                        "on-surface-variant": "#3c4a41",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#ffe170",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "xl": "64px",
+                        "md": "24px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "margin": "32px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["14px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased">
+<!-- SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 border-r border-outline-variant shadow-sm bg-surface-container-lowest flex flex-col py-6 z-50">
+<div class="px-gutter mb-lg">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-bold">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<h1 class="font-h3 text-h3 font-bold text-primary-container">EduManage</h1>
+<p class="font-caption text-caption text-outline">Admin Portal</p>
+</div>
+</div>
+</div>
+<ul class="flex-1 flex flex-col gap-xs px-sm font-label-sm text-label-sm">
+<!-- Dashboard -->
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-outline hover:text-primary-container hover:bg-surface transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<!-- Guru -->
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-outline hover:text-primary-container hover:bg-surface transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">badge</span>
+                    Guru
+                </a>
+</li>
+<!-- Siswa -->
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-outline hover:text-primary-container hover:bg-surface transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">group</span>
+                    Siswa
+                </a>
+</li>
+<!-- Kelas -->
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-outline hover:text-primary-container hover:bg-surface transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">door_front</span>
+                    Kelas
+                </a>
+</li>
+<!-- Mapel (Active) -->
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg relative bg-surface-container-low text-primary-container font-bold before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-primary-container before:rounded-r-full transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined fill-icon">auto_stories</span>
+                    Mapel
+                </a>
+</li>
+<!-- Absensi -->
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-outline hover:text-primary-container hover:bg-surface transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+                    Absensi
+                </a>
+</li>
+<!-- Jurnal -->
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-outline hover:text-primary-container hover:bg-surface transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">import_contacts</span>
+                    Jurnal
+                </a>
+</li>
+<!-- Laporan -->
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-outline hover:text-primary-container hover:bg-surface transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">summarize</span>
+                    Laporan
+                </a>
+</li>
+<!-- Gaji -->
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-outline hover:text-primary-container hover:bg-surface transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">payments</span>
+                    Gaji
+                </a>
+</li>
+<!-- Pengaturan -->
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-outline hover:text-primary-container hover:bg-surface transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Pengaturan
+                </a>
+</li>
+</ul>
+</nav>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-surface-container-lowest/80 backdrop-blur-md shadow-sm flex items-center justify-between px-8">
+<!-- Search Bar (on_left) -->
+<div class="flex-1 max-w-md focus-within:ring-2 focus-within:ring-primary-container rounded-full transition-shadow">
+<div class="relative flex items-center w-full h-10 rounded-full bg-surface-container-low overflow-hidden">
+<div class="grid place-items-center h-full w-12 text-outline">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="peer h-full w-full outline-none font-body-md text-body-md text-on-surface bg-transparent pr-sm" id="search" placeholder="Search..." type="text"/>
+</div>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-sm text-outline">
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container-low hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container-low hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+<div class="h-8 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-sm cursor-pointer hover:opacity-80 transition-opacity">
+<span class="font-label-sm text-label-sm text-on-surface hidden lg:block">Admin</span>
+<img alt="Admin Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-surface" data-alt="A professional headshot of a male school administrator in his 40s. He is wearing a neat blue button-down shirt. The background is a bright, softly blurred office environment with a plant. The lighting is natural and flattering, fitting a corporate educational context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBfUXIJjss3kEUV9rGDqWKh-ghqVDHmXEGHuwQb6YaDIMs_tSW5e0y0EGuOIDt_WhavI9AoQLEoycAl15qNYgFEduJh4KLK8c8Ry557eBNu-5sq_6tdxiyBCUHMLJ1C6QOZ2nUPxMtNLDTTw0f5WMOWxCmPJ9bVqZTvchfefGHjiIdsKEYn_ywwrc9xdyJJmxQZw7OMZJTDmOqDU53yTmdBK5H2cS69WPQxTVPcM-YeqMVrztmxlAwzdHLQsiRPO9UCiIOfeeL-FM"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-[calc(64px+48px)] min-h-screen px-gutter pb-lg max-w-7xl mx-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-lg">
+<div>
+<h2 class="font-h2 text-h2 text-on-background mb-xs">Subject Management</h2>
+<p class="font-body-md text-body-md text-outline">Overview and configuration of academic curriculum subjects.</p>
+</div>
+<div class="flex items-center gap-sm">
+<button class="flex items-center gap-xs px-md py-sm rounded-lg border border-primary-container text-primary-container font-label-sm text-label-sm hover:bg-primary-container/10 transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Filter
+                </button>
+<button class="flex items-center gap-xs px-md py-sm rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Add Subject
+                </button>
+</div>
+</div>
+<!-- Bento Grid / Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-md">
+<!-- Subject Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant shadow-sm hover:shadow-md transition-all duration-200 flex flex-col">
+<div class="flex items-start justify-between mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container/20 text-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">calculate</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Mathematics</h3>
+<span class="inline-block mt-xs px-2 py-1 bg-surface-container rounded font-caption text-caption text-outline">Core Subject</span>
+</div>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex-1">
+<div class="mb-sm">
+<p class="font-caption text-caption text-outline mb-xs">Grade Levels</p>
+<div class="flex flex-wrap gap-xs">
+<span class="px-2 py-1 rounded-full border border-outline-variant font-caption text-caption text-on-surface-variant">Grade 10</span>
+<span class="px-2 py-1 rounded-full border border-outline-variant font-caption text-caption text-on-surface-variant">Grade 11</span>
+<span class="px-2 py-1 rounded-full border border-outline-variant font-caption text-caption text-on-surface-variant">Grade 12</span>
+</div>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                        4 Hours / Week (Avg)
+                    </div>
+</div>
+<div class="mt-md pt-sm border-t border-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<img alt="Coordinator" class="w-8 h-8 rounded-full object-cover" data-alt="A professional headshot of a middle-aged female mathematics teacher in a modern, brightly lit classroom environment. She is wearing a smart casual navy blazer over a crisp white shirt. The background is softly blurred. The lighting is soft and flattering, creating a welcoming and corporate educational aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7mJ8lvdqqg3tl_-xRDzj_PCQ-C1tPZwnsiOYnce2hXmgCe3VLPqSHKxSBS239TBQvjtCSgPEaU-JlteEZVtO5bAKfNVLRTQnwggP1oFl-BcQ0NsrRjB3l6LE5t6hWyCnWtMPlX8I0DdMm6xcTz1z_haQtNTgQD2koQdbneFuODYmTTdM2GVbrNonOkyFYmgy0mUc4xIzmIr06Vwy7A1I5PdHknDLOlMBE6Mvok6k6DIgqEdh05sQHdFs4savvo1OX_2dvSTz4rMg"/>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface leading-tight">Sarah Jenkins</p>
+<p class="font-caption text-caption text-outline">Coordinator</p>
+</div>
+</div>
+<span class="font-caption text-caption text-primary font-medium bg-primary-container/10 px-2 py-1 rounded">Active</span>
+</div>
+</div>
+<!-- Subject Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant shadow-sm hover:shadow-md transition-all duration-200 flex flex-col">
+<div class="flex items-start justify-between mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/20 text-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">biotech</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Biology</h3>
+<span class="inline-block mt-xs px-2 py-1 bg-surface-container rounded font-caption text-caption text-outline">Science</span>
+</div>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex-1">
+<div class="mb-sm">
+<p class="font-caption text-caption text-outline mb-xs">Grade Levels</p>
+<div class="flex flex-wrap gap-xs">
+<span class="px-2 py-1 rounded-full border border-outline-variant font-caption text-caption text-on-surface-variant">Grade 11</span>
+<span class="px-2 py-1 rounded-full border border-outline-variant font-caption text-caption text-on-surface-variant">Grade 12</span>
+</div>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                        6 Hours / Week (w/ Lab)
+                    </div>
+</div>
+<div class="mt-md pt-sm border-t border-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<img alt="Coordinator" class="w-8 h-8 rounded-full object-cover" data-alt="A professional headshot of a male science teacher in his 30s. He has short hair and a welcoming smile, wearing a casual grey sweater. The background is a modern laboratory setting with soft, natural lighting. The mood is approachable and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuDfzlPTOMcly8nlxQ09tPObGROEcvChtwstaKRw96cXNX7Hgbt3VcAIbZhmva4GELXhzRjm1sX1sqykyW9LdZrrAQAAHGVPm0FcZtXSsFuDvNSTnebKLahtj3plqWUXoeH9BVNP_i2wobJEgdLVj31pOcBCZafnJRNOOHo0Wus9FnaTlV4-dTNL5aptigGVvz0GkufawSK1byXZbgrFCBQpJgL5VxSPTAWZBfB0VxOL6NHl7s6-hBDA1eSfjWUW-VP1_DCqW0Ek0"/>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface leading-tight">Mark Roberts</p>
+<p class="font-caption text-caption text-outline">Coordinator</p>
+</div>
+</div>
+<span class="font-caption text-caption text-primary font-medium bg-primary-container/10 px-2 py-1 rounded">Active</span>
+</div>
+</div>
+<!-- Subject Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant shadow-sm hover:shadow-md transition-all duration-200 flex flex-col">
+<div class="flex items-start justify-between mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-lg bg-primary-container/20 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">language</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">English Lit.</h3>
+<span class="inline-block mt-xs px-2 py-1 bg-surface-container rounded font-caption text-caption text-outline">Language</span>
+</div>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex-1">
+<div class="mb-sm">
+<p class="font-caption text-caption text-outline mb-xs">Grade Levels</p>
+<div class="flex flex-wrap gap-xs">
+<span class="px-2 py-1 rounded-full border border-outline-variant font-caption text-caption text-on-surface-variant">Grade 9</span>
+<span class="px-2 py-1 rounded-full border border-outline-variant font-caption text-caption text-on-surface-variant">Grade 10</span>
+<span class="px-2 py-1 rounded-full border border-outline-variant font-caption text-caption text-on-surface-variant">Grade 11</span>
+</div>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                        3 Hours / Week
+                    </div>
+</div>
+<div class="mt-md pt-sm border-t border-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<img alt="Coordinator" class="w-8 h-8 rounded-full object-cover" data-alt="A portrait of a young female teacher in a sunlit classroom library. She is smiling gently and wearing a modest green cardigan. The background features neat bookshelves, creating an atmosphere of quiet study and warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAJCfjYYI2SygNoD1UhJeUFUrV09XDBaLGlrFvbE5FuljCMBzJHOIgAKRLn4qYkoC1CROhZSFKq_fdu0C7g8ZnVX2tMGeb3VuuIzFpX5_zFW8MVJ4yDj2RCm_iFbaPAHEmrBh0yj8PE5LLJoLimsDTecjJxGS54UZ60xfoBco_qzbErX2yVdmeBAKM5vFzu1eZI3tkZuCHKT_mPZu8RxKbf3dALV7t1L4eMFL71xP-mZpSmz8OkcNGRdRo78agZtsqXnq9svCE8q4"/>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface leading-tight">Emily Chen</p>
+<p class="font-caption text-caption text-outline">Coordinator</p>
+</div>
+</div>
+<span class="font-caption text-caption text-primary font-medium bg-primary-container/10 px-2 py-1 rounded">Active</span>
+</div>
+</div>
+<!-- Subject Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant shadow-sm hover:shadow-md transition-all duration-200 flex flex-col">
+<div class="flex items-start justify-between mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">history_edu</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">History</h3>
+<span class="inline-block mt-xs px-2 py-1 bg-surface-container rounded font-caption text-caption text-outline">Humanities</span>
+</div>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex-1">
+<div class="mb-sm">
+<p class="font-caption text-caption text-outline mb-xs">Grade Levels</p>
+<div class="flex flex-wrap gap-xs">
+<span class="px-2 py-1 rounded-full border border-outline-variant font-caption text-caption text-on-surface-variant">Grade 10</span>
+<span class="px-2 py-1 rounded-full border border-outline-variant font-caption text-caption text-on-surface-variant">Grade 12</span>
+</div>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                        2 Hours / Week
+                    </div>
+</div>
+<div class="mt-md pt-sm border-t border-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-label-sm text-on-surface">
+                            DJ
+                        </div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface leading-tight">David Jones</p>
+<p class="font-caption text-caption text-outline">Coordinator</p>
+</div>
+</div>
+<span class="font-caption text-caption text-error font-medium bg-error-container px-2 py-1 rounded">Needs Staff</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Absensi - EduManage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary": "#006d44",
+                "background": "#f8f9fb",
+                "surface-container-low": "#f3f4f6",
+                "surface-tint": "#006d44",
+                "outline-variant": "#bbcabe",
+                "on-tertiary-fixed-variant": "#004e5c",
+                "surface-container-highest": "#e1e2e4",
+                "outline": "#6c7b70",
+                "on-background": "#191c1e",
+                "on-secondary-fixed": "#221b00",
+                "on-secondary": "#ffffff",
+                "on-primary-fixed": "#002111",
+                "surface": "#f8f9fb",
+                "secondary": "#705d00",
+                "on-tertiary": "#ffffff",
+                "inverse-on-surface": "#f0f1f3",
+                "surface-dim": "#d9dadc",
+                "secondary-fixed-dim": "#e9c400",
+                "secondary-container": "#fdd400",
+                "tertiary-fixed-dim": "#30d8fa",
+                "primary-fixed-dim": "#46e099",
+                "tertiary": "#00687a",
+                "on-tertiary-fixed": "#001f26",
+                "on-surface": "#191c1e",
+                "surface-container-lowest": "#ffffff",
+                "tertiary-container": "#00c7e8",
+                "surface-bright": "#f8f9fb",
+                "primary-container": "#2dce89",
+                "primary-fixed": "#68fdb3",
+                "on-secondary-fixed-variant": "#544600",
+                "on-error-container": "#93000a",
+                "error": "#ba1a1a",
+                "tertiary-fixed": "#acecff",
+                "on-primary-fixed-variant": "#005232",
+                "error-container": "#ffdad6",
+                "inverse-surface": "#2e3132",
+                "surface-container": "#edeef0",
+                "surface-container-high": "#e7e8ea",
+                "on-primary-container": "#005232",
+                "on-secondary-container": "#6f5c00",
+                "on-tertiary-container": "#004f5d",
+                "inverse-primary": "#46e099",
+                "surface-variant": "#e1e2e4",
+                "on-surface-variant": "#3c4a41",
+                "on-error": "#ffffff",
+                "secondary-fixed": "#ffe170",
+                "on-primary": "#ffffff"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "sm": "12px",
+                "xs": "4px",
+                "xl": "64px",
+                "md": "24px",
+                "base": "8px",
+                "lg": "48px",
+                "margin": "32px"
+        },
+        "fontFamily": {
+                "h2": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-sm": [
+                        "Plus Jakarta Sans"
+                ],
+                "h3": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "h1": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "caption": [
+                        "Plus Jakarta Sans"
+                ]
+        },
+        "fontSize": {
+                "h2": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "h3": [
+                        "24px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "h1": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "caption": [
+                        "12px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+    }
+  }
+}
+</script>
+<style>
+  body {
+    background-color: theme('colors.background');
+    color: theme('colors.on-background');
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+</style>
+</head>
+<body class="antialiased flex h-screen overflow-hidden text-on-background bg-background">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-outline-variant shadow-sm bg-surface-container-lowest z-50 flex flex-col py-6">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-xl" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<div>
+<h1 class="text-h3 font-h3 text-primary">EduManage</h1>
+<p class="text-caption font-caption text-on-surface-variant">Admin Portal</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto flex flex-col gap-1 px-4">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200 active:scale-95 text-label-sm font-label-sm" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+            Dashboard
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200 active:scale-95 text-label-sm font-label-sm" href="#">
+<span class="material-symbols-outlined">badge</span>
+            Guru
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200 active:scale-95 text-label-sm font-label-sm" href="#">
+<span class="material-symbols-outlined">group</span>
+            Siswa
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200 active:scale-95 text-label-sm font-label-sm" href="#">
+<span class="material-symbols-outlined">door_front</span>
+            Kelas
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200 active:scale-95 text-label-sm font-label-sm" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+            Mapel
+        </a>
+<a class="relative bg-primary/10 text-primary font-bold before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-primary before:rounded-r-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors duration-200 active:scale-95 text-label-sm font-label-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+            Absensi
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200 active:scale-95 text-label-sm font-label-sm" href="#">
+<span class="material-symbols-outlined">import_contacts</span>
+            Jurnal
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200 active:scale-95 text-label-sm font-label-sm" href="#">
+<span class="material-symbols-outlined">summarize</span>
+            Laporan
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200 active:scale-95 text-label-sm font-label-sm" href="#">
+<span class="material-symbols-outlined">payments</span>
+            Gaji
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200 active:scale-95 text-label-sm font-label-sm mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+            Pengaturan
+        </a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 flex flex-col h-screen overflow-hidden bg-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant flex items-center justify-between px-8 shadow-sm">
+<div class="flex items-center w-96 relative text-on-surface-variant focus-within:text-primary focus-within:ring-2 focus-within:ring-primary rounded-full transition-all">
+<span class="material-symbols-outlined absolute left-4 pointer-events-none">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full pl-12 pr-4 py-2 text-body-md font-body-md focus:ring-0 placeholder:text-on-surface-variant/70" placeholder="Cari siswa atau kelas..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3 border-r border-outline-variant pr-6">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<span class="text-label-sm font-label-sm text-on-surface cursor-pointer hover:text-primary transition-colors">Support</span>
+</div>
+<button class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+<div class="text-right hidden md:block">
+<p class="text-label-sm font-label-sm text-on-surface">Admin User</p>
+<p class="text-caption font-caption text-on-surface-variant">Profile</p>
+</div>
+<img alt="Admin Avatar" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a mature male administrator with short dark hair and glasses, wearing a smart casual navy blazer over a light blue shirt. He has a warm, welcoming smile. The background is a softly blurred, modern office environment with bright, natural high-key lighting, fitting a professional and efficient brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBITqniCzHvLOD4atdF9GVc5ZYMs4KRJjO5v3J3GkNNoVBUeXipK4VuK9fci1XnjDXx3EQPvz6dHWJiEP4vwfUh0QlPWPI3srS8ZyRU9nX83CanzGKV9y4hSI0iD5myFA9qRdTT1a6gsyP_a4QpIu4N-tGPsfLjisyLeM_b3DOEXmJKJ1n86WUT1GfiwusQV9-gpuc5BnEcLpKwlbKZVrWR8g3kYzqS2D8IqGPTbZohS-GgYrqBmRcov1kpCgq0Fqp8JykjhQKpeDM"/>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto mt-16 p-8">
+<div class="max-w-6xl mx-auto w-full">
+<!-- Page Header & Controls -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
+<div>
+<h2 class="text-h2 font-h2 text-on-surface mb-2">Pencatatan Absensi</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Kelola kehadiran siswa untuk sesi kelas hari ini.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant px-1">Tanggal</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-xl">calendar_month</span>
+<input class="pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all cursor-pointer" type="date" value="2023-10-24"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant px-1">Kelas &amp; Mata Pelajaran</label>
+<div class="relative min-w-[240px]">
+<select class="w-full appearance-none pl-4 pr-10 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all cursor-pointer">
+<option>10A - Matematika Lanjut</option>
+<option>10B - Fisika Dasar</option>
+<option>11A - Biologi</option>
+<option>12C - Kimia</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Stats -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<!-- Hadir -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/50 relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-24 h-24 bg-primary/5 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">how_to_reg</span>
+</div>
+<span class="text-h3 font-h3 text-on-surface">28</span>
+</div>
+<h3 class="text-label-sm font-label-sm text-on-surface-variant relative z-10 uppercase tracking-wider">Hadir</h3>
+</div>
+<!-- Sakit -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/50 relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-24 h-24 bg-secondary-container/20 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">local_hospital</span>
+</div>
+<span class="text-h3 font-h3 text-on-surface">2</span>
+</div>
+<h3 class="text-label-sm font-label-sm text-on-surface-variant relative z-10 uppercase tracking-wider">Sakit</h3>
+</div>
+<!-- Izin -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/50 relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-24 h-24 bg-tertiary-container/20 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">edit_document</span>
+</div>
+<span class="text-h3 font-h3 text-on-surface">1</span>
+</div>
+<h3 class="text-label-sm font-label-sm text-on-surface-variant relative z-10 uppercase tracking-wider">Izin</h3>
+</div>
+<!-- Alpa -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/50 relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-24 h-24 bg-error-container/40 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">person_off</span>
+</div>
+<span class="text-h3 font-h3 text-on-surface">1</span>
+</div>
+<h3 class="text-label-sm font-label-sm text-on-surface-variant relative z-10 uppercase tracking-wider">Alpa</h3>
+</div>
+</div>
+<!-- Student List Section -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/50 overflow-hidden flex flex-col">
+<!-- Table Header (Visual only, mapped to flex rows) -->
+<div class="grid grid-cols-12 gap-4 px-6 py-4 bg-surface-container-low/50 border-b border-outline-variant/50">
+<div class="col-span-4 text-label-sm font-label-sm text-on-surface-variant">Siswa</div>
+<div class="col-span-6 text-label-sm font-label-sm text-on-surface-variant">Status Kehadiran</div>
+<div class="col-span-2 text-right text-label-sm font-label-sm text-on-surface-variant">Aksi</div>
+</div>
+<!-- List Items -->
+<div class="flex flex-col divide-y divide-outline-variant/30">
+<!-- Item 1 (Hadir) -->
+<div class="grid grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-surface-container-lowest/80 transition-colors">
+<div class="col-span-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">
+                                AD
+                            </div>
+<div>
+<p class="text-body-md font-body-md text-on-surface font-medium">Ahmad Dhani</p>
+<p class="text-caption font-caption text-on-surface-variant">NIS: 10293847</p>
+</div>
+</div>
+<div class="col-span-6">
+<div class="inline-flex rounded-full bg-surface-container p-1 shadow-inner">
+<button class="bg-surface-container-lowest shadow-sm text-primary rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                    Hadir
+                                </button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all">Sakit</button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all">Izin</button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all">Alpa</button>
+</div>
+</div>
+<div class="col-span-2 flex justify-end">
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Item 2 (Sakit) -->
+<div class="grid grid-cols-12 gap-4 px-6 py-4 items-center bg-secondary-container/5 hover:bg-secondary-container/10 transition-colors">
+<div class="col-span-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary font-bold text-sm">
+                                BK
+                            </div>
+<div>
+<p class="text-body-md font-body-md text-on-surface font-medium">Budi Kusuma</p>
+<p class="text-caption font-caption text-on-surface-variant">NIS: 10293848</p>
+</div>
+</div>
+<div class="col-span-6">
+<div class="inline-flex rounded-full bg-surface-container p-1 shadow-inner">
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all">Hadir</button>
+<button class="bg-surface-container-lowest shadow-sm text-secondary rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                    Sakit
+                                </button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all">Izin</button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all">Alpa</button>
+</div>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]" title="Surat Dokter Terlampir">attachment</span>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Item 3 (Hadir) -->
+<div class="grid grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-surface-container-lowest/80 transition-colors">
+<div class="col-span-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">
+                                CP
+                            </div>
+<div>
+<p class="text-body-md font-body-md text-on-surface font-medium">Citra Pertiwi</p>
+<p class="text-caption font-caption text-on-surface-variant">NIS: 10293849</p>
+</div>
+</div>
+<div class="col-span-6">
+<div class="inline-flex rounded-full bg-surface-container p-1 shadow-inner">
+<button class="bg-surface-container-lowest shadow-sm text-primary rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                    Hadir
+                                </button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all">Sakit</button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all">Izin</button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all">Alpa</button>
+</div>
+</div>
+<div class="col-span-2 flex justify-end">
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Item 4 (Alpa) -->
+<div class="grid grid-cols-12 gap-4 px-6 py-4 items-center bg-error-container/10 hover:bg-error-container/20 transition-colors">
+<div class="col-span-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-error font-bold text-sm">
+                                DS
+                            </div>
+<div>
+<p class="text-body-md font-body-md text-on-surface font-medium">Dimas Saputra</p>
+<p class="text-caption font-caption text-on-surface-variant">NIS: 10293850</p>
+</div>
+</div>
+<div class="col-span-6">
+<div class="inline-flex rounded-full bg-surface-container p-1 shadow-inner">
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all">Hadir</button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all">Sakit</button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all">Izin</button>
+<button class="bg-surface-container-lowest shadow-sm text-error rounded-full px-5 py-1.5 text-label-sm font-label-sm transition-all flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                                    Alpa
+                                </button>
+</div>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-2">
+<button class="text-caption font-caption text-error bg-error-container px-2 py-1 rounded-md hover:bg-error/20 transition-colors">
+                                Kirim Peringatan
+                            </button>
+</div>
+</div>
+</div>
+<!-- Bottom Action Bar -->
+<div class="bg-surface-container-low px-6 py-4 border-t border-outline-variant/50 flex justify-between items-center">
+<p class="text-caption font-caption text-on-surface-variant">4 dari 32 siswa telah diproses</p>
+<button class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-lg text-label-sm font-label-sm shadow-sm transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                        Simpan Absensi
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

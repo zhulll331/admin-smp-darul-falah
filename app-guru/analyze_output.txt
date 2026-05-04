@@ -1,0 +1,15 @@
+Analyzing app-guru...                                           
+
+warning - Unused import: 'package:flutter/foundation.dart' - lib\firebase_options.dart:2:8 - unused_import
+warning - Unused import: '../utils/colors.dart' - lib\providers\attendance_provider.dart:5:8 - unused_import
+warning - Unused import: 'package:shared_preferences/shared_preferences.dart' - lib\providers\auth_provider.dart:5:8 - unused_import
+warning - Unused import: 'auth_provider.dart' - lib\providers\home_provider.dart:5:8 - unused_import
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\attendance_screen.dart:101:75 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\attendance_screen.dart:123:53 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use initialValue instead. This will set the initial value for the form field. This feature was deprecated after v3.33.0-1.0.pre - lib\screens\home_screen.dart:80:25 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use initialValue instead. This will set the initial value for the form field. This feature was deprecated after v3.33.0-1.0.pre - lib\screens\home_screen.dart:98:25 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\login_screen.dart:62:41 - deprecated_member_use
+   info - 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\utils\theme.dart:12:9 - deprecated_member_use
+  error - The argument type 'CardTheme' can't be assigned to the parameter type 'CardThemeData?'.  - lib\utils\theme.dart:69:18 - argument_type_not_assignable
+  error - The name 'MyApp' isn't a class - test\widget_test.dart:16:35 - creation_with_non_type
+

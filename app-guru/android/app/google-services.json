@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "260813482745",
+    "project_id": "manajemen-guru-smpplus",
+    "storage_bucket": "manajemen-guru-smpplus.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260813482745:android:0b89cf01a5f1be8bab9028",
+        "android_client_info": {
+          "package_name": "com.darulfalah.app_guru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "260813482745-9vuedllhvq2jbtgin6c09mec8k97tklt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.darulfalah.app_guru",
+            "certificate_hash": "9169ba0be0a7345f14fca64f724b0b97998c4418"
+          }
+        },
+        {
+          "client_id": "260813482745-1vad8jckk40svnromrpg4ohp2nbmkm2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN3xR7JH576KaInCRK4MC0xM8GKNDuwgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "260813482745-1vad8jckk40svnromrpg4ohp2nbmkm2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
