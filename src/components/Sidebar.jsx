@@ -28,7 +28,7 @@ export default function Sidebar({ onClose }) {
   };
 
   return (
-    <nav className="h-screen w-64 fixed left-0 top-0 border-r bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800 shadow-sm flex flex-col py-6 z-50">
+    <nav className="h-screen w-64 border-r bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800 shadow-sm flex flex-col py-6 z-50">
       {/* Header */}
       <div className="px-gutter mb-lg flex items-center gap-sm">
         <img src="/logo.png" alt="Logo SMP Plus Darul Falah" className="w-12 h-12 object-contain" />
