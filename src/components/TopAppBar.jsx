@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getStudents, getTeachers, getClasses } from '../services/firestoreService';
 
-export default function TopAppBar() {
+export default function TopAppBar({ onMenuClick }) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [isFocused, setIsFocused] = useState(false);
@@ -39,11 +39,19 @@ export default function TopAppBar() {
   }, []);
 
   return (
-    <header className="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm flex items-center justify-between px-8">
+    <header className="fixed top-0 right-0 w-full lg:w-[calc(100%-16rem)] h-16 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm flex items-center justify-between px-4 lg:px-8 gap-3">
+      {/* Mobile Menu Button */}
+      <button 
+        className="lg:hidden p-2 text-gray-600 rounded-lg hover:bg-gray-100" 
+        onClick={onMenuClick}
+      >
+        <span className="material-symbols-outlined">menu</span>
+      </button>
+
       {/* Left: Search */}
       <div className="flex-1 max-w-md relative" ref={dropdownRef}>
         <div className="relative flex items-center w-full h-10 rounded-lg bg-surface focus-within:bg-surface-container-lowest border border-transparent focus-within:border-outline-variant overflow-hidden transition-colors">
-          <div className="grid place-items-center h-full w-12 text-outline">
+          <div className="grid place-items-center h-full w-10 lg:w-12 text-outline">
             <span className="material-symbols-outlined text-sm">search</span>
           </div>
           <input 

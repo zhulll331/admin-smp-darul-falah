@@ -15,7 +15,7 @@ const navItems = [
   { id: 'gaji', label: 'Gaji', icon: 'payments', path: '/gaji' }
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ onClose }) {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -43,6 +43,7 @@ export default function Sidebar() {
           <NavLink
             key={item.id}
             to={item.path}
+            onClick={onClose}
             className={({ isActive }) =>
               `flex items-center gap-md px-md py-sm rounded-lg transition-colors duration-200 active:scale-95 font-['Plus_Jakarta_Sans'] text-sm font-medium ${
                 isActive
