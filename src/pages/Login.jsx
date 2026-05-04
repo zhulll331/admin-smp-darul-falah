@@ -30,10 +30,8 @@ export default function Login() {
     <div className="min-h-screen bg-background flex items-center justify-center p-4 antialiased animate-in fade-in duration-500">
       <div className="max-w-md w-full bg-surface rounded-2xl shadow-lg border border-surface-variant overflow-hidden">
         {/* Header */}
-        <div className="p-8 text-center bg-primary-container/10 border-b border-surface-variant">
-          <div className="w-16 h-16 bg-primary-container text-on-primary-container rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
-            <span className="material-symbols-outlined text-3xl">school</span>
-          </div>
+        <div className="p-8 text-center bg-primary-container/10 border-b border-surface-variant flex flex-col items-center">
+          <img src="/logo.png" alt="Logo SMP Plus Darul Falah" className="w-20 h-20 object-contain mb-4" />
           <h1 className="font-h3 text-h3 text-on-surface font-bold">EduManage Admin</h1>
           <p className="font-body-md text-body-md text-on-surface-variant mt-2">SMP Plus Darul Falah</p>
         </div>
