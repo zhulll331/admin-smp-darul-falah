@@ -86,7 +86,16 @@ export default function Guru() {
 
   function getSubjectName(id) {
     const s = subjects.find(x => x.id === id);
-    return s?.name || id;
+    if (s?.name) return s.name;
+    
+    // If subject is not found and the ID looks like a 20-character Firestore ID,
+    // it means the subject was likely deleted. We return null to hide it.
+    if (typeof id === 'string' && id.length === 20 && /^[a-zA-Z0-9]+$/.test(id)) {
+      return null;
+    }
+    
+    // Otherwise, it might be a manually inputted string name (like "Pegon" from an import)
+    return id;
   }
 
   async function handleBulkDelete() {
@@ -306,7 +315,7 @@ export default function Guru() {
                     </td>
                     <td className="py-4 px-6 font-body-md text-body-md text-on-surface-variant">{t.email || '-'}</td>
                     <td className="py-4 px-6 font-body-md text-body-md text-on-surface-variant">
-                      {(t.subjectIds || []).map(id => getSubjectName(id)).join(', ') || '-'}
+                      {(t.subjectIds || []).map(id => getSubjectName(id)).filter(Boolean).join(', ') || '-'}
                     </td>
                     <td className="py-4 px-6">
                       {t.isActive !== false ? (
